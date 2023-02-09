@@ -1,16 +1,22 @@
 <template>
   <div>
+    <HeaderComponent />
     <HomeComponent />
+    <FooterComponent />
   </div>
 </template>
 
 <script>
-import HomeComponent from './components/HomeComponent.vue'
+  import HomeComponent from './components/HomeComponent.vue';
+  import FooterComponent from './components/FooterComponent.vue';
+  import HeaderComponent from './components/HeaderComponent.vue';
 
 export default {
   name: 'App',
   components: {
-    HomeComponent
+    HomeComponent,
+    FooterComponent,
+    HeaderComponent
   }
 }
 </script>
@@ -22,6 +28,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
