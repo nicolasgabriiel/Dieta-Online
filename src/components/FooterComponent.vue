@@ -36,7 +36,7 @@
         background: #fdfdf2;
         color: #444;
         display: flex;
-        height: 200px;
+        height: 150px;
         justify-content: center;
         border-block-start: 2px solid #444 ;
 
@@ -51,10 +51,13 @@
     }
 
     .info .icons{
-        margin: 0 1rem;
+        margin: 0 1rem 0 1rem;
         color: #444;
         scale: 1.25;
-        
+        transition: .3s;
+    }
+    .info .icons:hover{
+        opacity: .6;
     }
 
 </style>
