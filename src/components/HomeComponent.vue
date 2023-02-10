@@ -3,7 +3,7 @@
     <div class="home-background">
         <div class="home-container">
             <div class="home-titulo">
-                <h1>Estamos prontos para atender duas necessidades</h1>
+                <h1>Estamos prontos para atender suas necessidades</h1>
             </div>
             <div class="home-topicos">
                 <div>
@@ -16,7 +16,7 @@
                 </div>
                 <div>
                     <fa icon="dumbbell" />
-                    <p>Hipertrofia: Aumente sua massa muscular de acordo com seu objetivo; </p>
+                    <p>Hipertrofia: Aumente sua massa muscular de acordo com seu objetivo pessoal; </p>
                 </div>
             </div>
             <div class="home-button">
@@ -106,6 +106,7 @@
         height: 60px;
         cursor: pointer;
         transition: all 0.2s;
+        border-radius: 3px;
         
     }
 

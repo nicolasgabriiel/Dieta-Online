@@ -36,7 +36,7 @@
         background: #fdfdf2;
         color: #444;
         display: flex;
-        height: 200px;
+        height: 150px;
         justify-content: center;
         border-block-start: 2px solid #444 ;
 
