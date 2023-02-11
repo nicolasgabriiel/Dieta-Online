@@ -1,9 +1,24 @@
-# Dieta-Online
+# projeto-dieta
 
-# Planejamento de Estruturas
+## Project setup
+```
+npm install
+```
 
--[ ] Home
--[ ] Perguntas
--[ ] Tratamento/ Gráficos
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-site da ideia/ exemplo: https://www.manual.com.br/?utm_source=google&utm_campaign=16655281084&utm_medium=cpc&gclid=Cj0KCQiA54KfBhCKARIsAJzSrdporB07nk-lwRjmZ1rfq_UMMfngJxnNHQ3ShPtSPylV34aaZhulYj8aAlCqEALw_wcBgit 
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

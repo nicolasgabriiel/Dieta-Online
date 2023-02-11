@@ -55,6 +55,7 @@
         color: #444;
         scale: 1.25;
         transition: .3s;
+        background: red;
     }
     .info .icons:hover{
         opacity: .6;
