@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="home-button">
-                <button>COMEÇAR</button>
+                <router-link to="/aplicacao"><button>COMEÇAR</button></router-link>
             </div>
         </div>
     </div>
