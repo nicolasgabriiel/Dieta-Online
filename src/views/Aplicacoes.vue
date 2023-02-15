@@ -21,7 +21,7 @@
           <li>Insira pesos e alimentos para manter o seu controle alimentar sempre atualizado.</li>
           <li>Tenha uma lista de compras completa e organizada, sempre atualizada com os itens necessários para seguir sua dieta.</li>
         </ul>
-        <router-link to="/" class="no-underline">
+        <router-link to="/formulario-dieta" class="no-underline">
           <button>vamos lá</button>
         </router-link>
       </div>
