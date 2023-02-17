@@ -24,8 +24,13 @@
 
 <script>
 
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
     export default{
-        name: 'footer-home'
+        name: 'footer-home',
+        components: {
+            fa: FontAwesomeIcon
+        }
     }
 </script>
 
@@ -55,8 +60,8 @@
         color: #444;
         scale: 1.25;
         transition: .3s;
-        background: red;
     }
+    
     .info .icons:hover{
         opacity: .6;
     }
