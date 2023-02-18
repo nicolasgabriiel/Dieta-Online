@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import PrescricaoComponent from '../components/PrescricaoComponent.vue'
+import FormularioDieta from '../views/FormularioDieta.vue'
 
 
 const routes = [
@@ -15,9 +15,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Aplicacoes.vue')
   },
   {
-    path: '/prescricao',
-    name: 'prescricao',
-    component: PrescricaoComponent
+    path: '/formulario-dieta',
+    name: 'formularioDieta',
+    component: FormularioDieta
   }
 ]
 
