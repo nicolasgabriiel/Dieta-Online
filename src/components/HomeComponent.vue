@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="home-button">
-                <router-link to="/aplicacao"><button>COMEÇAR</button></router-link>
+                <router-link to="/aplicacao"><button>Começar</button></router-link>
             </div>
         </div>
     </div>
@@ -28,8 +28,14 @@
 </template>
 
 <script>
+
+ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
     export default{
-        name: 'home-component'
+        name: 'home-component',
+        components: {
+        fa: FontAwesomeIcon
+    }
     }
 
 </script>

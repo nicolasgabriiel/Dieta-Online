@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import FormularioDieta from '../views/FormularioDieta.vue'
+
 
 const routes = [
   {
@@ -14,8 +16,8 @@ const routes = [
   },
   {
     path: '/formulario-dieta',
-    name: 'Formulario-Dieta',
-    component: () => import(/* webpackChunkName: "about" */ '../views/FormularioDieta.vue')
+    name: 'formularioDieta',
+    component: FormularioDieta
   }
 ]
 
