@@ -10,7 +10,7 @@
           <li>Visualize todas as informações coletadas em uma tabela claramente organizada.</li>
           <li>Acompanhe a evolução de seu paciente através de gráficos intuitivos e fáceis de ler.</li>
         </ul>
-        <router-link to="/" class="no-underline">
+        <router-link to="/formulario-avaliacao-fisica" class="no-underline">
           <button class="bnt2">vamos lá</button>
         </router-link>
       </div>
@@ -31,7 +31,6 @@
 
 <script>
 import HeaderComponent from '@/components/HeaderComponent.vue'
-
 
 export default {
   components: { HeaderComponent },

@@ -5,40 +5,40 @@
         <h1>Avaliação Física</h1>
         <div class="form-row">
         <label for="titulo">Título</label>
-        <input type="text" id="titulo" v-model="titulo" placeholder="Título" required>
+        <input type="text" id="titulo"  placeholder="Título" required>
         </div>
         <div class="form-row">
         <label for="horario">Horário</label>
-        <input type="time" id="horario" v-model="horario" placeholder="Horário" required>
+        <input type="time" id="horario"  placeholder="Horário" required>
         </div>
         <div class="form-row">
         <label for="alimento1">Alimento 1</label>
-        <input type="text" id="alimento1" v-model="alimentos[0]" placeholder="Alimento 1">
+        <input type="text" id="alimento1"  placeholder="Alimento 1">
         <label for="alimento2">Alimento 2</label>
-        <input type="text" id="alimento2" v-model="alimentos[1]" placeholder="Alimento 2">
+        <input type="text" id="alimento2"  placeholder="Alimento 2">
         <label for="alimento3">Alimento 3</label>
-        <input type="text" id="alimento3" v-model="alimentos[2]" placeholder="Alimento 3">
+        <input type="text" id="alimento3"  placeholder="Alimento 3">
         <label for="alimento4">Alimento 4</label>
-        <input type="text" id="alimento4" v-model="alimentos[3]" placeholder="Alimento 4">
+        <input type="text" id="alimento4"  placeholder="Alimento 4">
         <label for="alimento5">Alimento 5</label>
-        <input type="text" id="alimento5" v-model="alimentos[4]" placeholder="Alimento 5">
+        <input type="text" id="alimento5"  placeholder="Alimento 5">
         </div>
         <div class="form-row">
         <label for="obs">OBS</label>
         <textarea id="obs" v-model="obs" placeholder="OBS"></textarea>
         </div>
         <div class="form-row">
-        <button type="submit" class="button" @click="adicionarRefeicao()">Adicionar</button>
+        <button type="submit" class="button" >Adicionar</button>
         </div>
     </div>
-    <div v-if="refeicoes.length > 0" class="container">
+    <div  class="container">
         <h2>Prescrição de Dieta</h2>
-        <div v-for="(refeicao, index) in refeicoes" :key="index" class="refeicao">
-        <div class="titulo">{{ refeicao.titulo }} - {{ refeicao.horario }}</div>
+        <div class="refeicao">
+        <div class="titulo"></div>
         <div class="alimentos">
-            <div v-for="(alimento, index) in refeicao.alimentos" :key="index">{{ alimento }}</div>
+            <div ></div>
         </div>
-        <div class="obs">{{ refeicao.obs }}</div>
+        <div class="obs"></div>
         </div>
     </div>
     </div>
