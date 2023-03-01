@@ -28,7 +28,7 @@
             </form>
         </div>
     </div>
-    <div v-html="textoDeAvaliacao"></div>
+    <div class="prescricao-container" v-html="textoDeAvaliacao"></div>
 </template>
 
 <script>
