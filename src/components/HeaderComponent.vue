@@ -1,6 +1,8 @@
 <template>
     <div class="header">
-        <h1>Dieta Online</h1>
+        <router-link to="/" class="routerLink">
+        <h1 class="logo">Dieta Online</h1>
+        </router-link>
     </div>
 </template>
 
@@ -27,4 +29,12 @@
         text-transform: uppercase;
         text-align: center;
     }
+    .logo{
+        cursor: pointer;
+    }
+    .routerLink{
+     text-decoration: none;
+ }
+
+    
 </style>
