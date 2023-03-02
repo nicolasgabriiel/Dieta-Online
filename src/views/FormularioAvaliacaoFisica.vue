@@ -20,15 +20,39 @@
                     <label for="horario">Altura Atual (cm)</label>
                     <input type="text" id="altura" placeholder="Digite aqui a sua altura" v-model="Altura" required>
                 </div>
-                <div class="form-row"></div>
-                <div class="form-row"></div>
+                <div class="form-row">
+                    <label for="horario">Data da Avaliação</label>
+                    <input type="date" id="data" placeholder="Digite aqui a data da sua avaliação" v-model="data" required>
+                </div>
+          
                 <div class="form-row">
                     <button type="button" class="button" @click="gerarAvaliacao"  >Fazer Avaliação</button>
                 </div>
             </form>
         </div>
     </div>
-    <div class="prescricao-container" v-html="textoDeAvaliacao"></div>
+    <div class="prescricao-container"  v-if="avaliacoes.length > 0">
+        
+        <div v-for="(avaliacoes, index) in avaliacoes" :key="index" >
+            
+            <h1>Paciente {{avaliacoes.Nome}}</h1>
+                <h1>Idade {{avaliacoes.Idade}}</h1>
+                <table>
+                    <tr>
+                        <td>Parametro</td>
+                        <td> {{avaliacoes.data}}</td>
+                    </tr>
+                    <tr>
+                        <td>Peso</td>
+                        <td> {{avaliacoes.Peso}}</td>
+                    </tr>
+                    <tr>
+                        <td>Altura</td>
+                        <td> {{avaliacoes.Altura}}</td>
+                    </tr>
+                </table>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -45,33 +69,57 @@ export default {
             Idade: "",
             Peso: "",
             Altura: "",
-            textoDeAvaliacao: '',
+            hoje: new Date(),
+            data: new Date().toISOString().substr(0, 10),
+            avaliacoes: []
         }
     },
     methods:{
         gerarAvaliacao(){
-            console.log(this.Nome, this.Idade, this.Peso, this.Altura)
-                this.textoDeAvaliacao = 
-                `
-                <h1>Paciente ${this.Nome}</h1>
-                <h1>Idade ${this.Idade}</h1>
-                <table>
-                    <tr>
-                        <td>Peso</td>
-                        <td> ${this.Peso}</td>
-                    </tr>
-                    <tr>
-                        <td>Altura</td>
-                        <td> ${this.Altura}</td>
-                    </tr>
-                </table>
-                
-                `
+            console.log(this.hoje.toISOString().substr(0, 10),)
+                // Criando um novo objeto de refeição com as informações preenchidas no formulário
+                const novaAvaliacao = {
+                    Nome: this.Nome,
+                    Idade: this.Idade,
+                    Altura: this.Altura,
+                    Peso: this.Peso,
+                    data: this.data,
+                };
+                // Adicionando a nova refeição na lista de refeições e limpando os campos do formulário
+                this.avaliacoes.push(novaAvaliacao);
+                this.Nome = "";
+                this.Idade = "";
+                this.Altura = '';
+                this.Peso = "";
+                console.log(this.avaliacoes)
         }
-    }
+    },
+   
 }
 
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <style scoped>
 .box {
@@ -108,7 +156,7 @@ export default {
 }
 
 input[type="text"],
-input[type="time"],
+input[type="date"],
 textarea {
     padding: 10px;
     margin-top: 5px;
