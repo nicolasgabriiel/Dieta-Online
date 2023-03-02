@@ -50,7 +50,8 @@ export default {
             Altura: "",
             textoDeAvaliacao: '',
             hoje: new Date(),
-            data: new Date().toISOString().substr(0, 10)
+            data: new Date().toISOString().substr(0, 10),
+            avaliacoes: []
         }
     },
     methods:{
@@ -62,6 +63,10 @@ export default {
                 <h1>Idade ${this.Idade}</h1>
                 <table>
                     <tr>
+                        <td>Parametro</td>
+                        <td> ${this.data}</td>
+                    </tr>
+                    <tr>
                         <td>Peso</td>
                         <td> ${this.Peso}</td>
                     </tr>
@@ -72,6 +77,21 @@ export default {
                 </table>
                 
                 `
+                // Criando um novo objeto de refeição com as informações preenchidas no formulário
+                const novaAvaliacao = {
+                    Nome: this.Nome,
+                    Idade: this.Idade,
+                    Altura: this.Altura,
+                    Peso: this.Peso,
+                    data: this.data,
+                };
+                // Adicionando a nova refeição na lista de refeições e limpando os campos do formulário
+                this.avaliacoes.push(novaAvaliacao);
+                this.Nome = "";
+                this.Idade = "";
+                this.Altura = '';
+                this.Peso = "";
+                console.log(this.avaliacoes)
         }
     },
    
