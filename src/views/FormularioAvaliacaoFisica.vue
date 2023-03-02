@@ -31,7 +31,28 @@
             </form>
         </div>
     </div>
-    <div class="prescricao-container" v-html="textoDeAvaliacao"></div>
+    <div class="prescricao-container"  v-if="avaliacoes.length > 0">
+        
+        <div v-for="(avaliacoes, index) in avaliacoes" :key="index" >
+            
+            <h1>Paciente {{avaliacoes.Nome}}</h1>
+                <h1>Idade {{avaliacoes.Idade}}</h1>
+                <table>
+                    <tr>
+                        <td>Parametro</td>
+                        <td> {{avaliacoes.data}}</td>
+                    </tr>
+                    <tr>
+                        <td>Peso</td>
+                        <td> {{avaliacoes.Peso}}</td>
+                    </tr>
+                    <tr>
+                        <td>Altura</td>
+                        <td> {{avaliacoes.Altura}}</td>
+                    </tr>
+                </table>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -48,7 +69,6 @@ export default {
             Idade: "",
             Peso: "",
             Altura: "",
-            textoDeAvaliacao: '',
             hoje: new Date(),
             data: new Date().toISOString().substr(0, 10),
             avaliacoes: []
@@ -57,26 +77,6 @@ export default {
     methods:{
         gerarAvaliacao(){
             console.log(this.hoje.toISOString().substr(0, 10),)
-                this.textoDeAvaliacao = 
-                `
-                <h1>Paciente ${this.Nome}</h1>
-                <h1>Idade ${this.Idade}</h1>
-                <table>
-                    <tr>
-                        <td>Parametro</td>
-                        <td> ${this.data}</td>
-                    </tr>
-                    <tr>
-                        <td>Peso</td>
-                        <td> ${this.Peso}</td>
-                    </tr>
-                    <tr>
-                        <td>Altura</td>
-                        <td> ${this.Altura}</td>
-                    </tr>
-                </table>
-                
-                `
                 // Criando um novo objeto de refeição com as informações preenchidas no formulário
                 const novaAvaliacao = {
                     Nome: this.Nome,
