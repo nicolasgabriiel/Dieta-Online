@@ -33,7 +33,7 @@
         <div v-if="refeicoes.length > 0" class="container">
             <h2>Prescrição de Dieta</h2>
             <div v-for="(refeicao, index) in refeicoes" :key="index" class="refeicao">
-                <div class="titulo">{{ refeicao.titulo }} - {{ refeicao.horario }}</div>
+                <div class="titulo" >{{ refeicao.titulo }} - {{ refeicao.horario }}</div>
                 <div class="alimentos">
                     <div v-for="(alimento, index) in refeicao.alimentos" :key="index">{{ alimento }}</div>
                 </div>
