@@ -6,11 +6,11 @@
             <form>
                 <div class="form-row">
                     <label for="titulo">Nome</label>
-                    <input type="text" id="titulo" placeholder="Digite aqui o seu nome" v-model="Nome" required>
+                    <input type="text" id="titulo" placeholder="Digite aqui o seu nome" v-model="Nome" :disabled="isDisabled" required>
                 </div>
                 <div class="form-row">
                     <label for="titulo">Idade</label>
-                    <input type="text" id="titulo" placeholder="Digite aqui a sua idade" v-model="Idade" required>
+                    <input type="text" id="titulo" placeholder="Digite aqui a sua idade" :disabled="isDisabled"  v-model="Idade" required>
                 </div>
                 <div class="form-row">
                     <label for="titulo">Peso Atual (Kg)</label>
@@ -33,22 +33,22 @@
     </div>
     <div class="prescricao-container"  v-if="avaliacoes.length > 0">
         
-        <div v-for="(avaliacoes, index) in avaliacoes" :key="index" >
+        <div>
             
-            <h1>Paciente {{avaliacoes.Nome}}</h1>
-                <h1>Idade {{avaliacoes.Idade}}</h1>
+            <h1>Paciente {{Nome}}</h1>
+                <h1>Idade {{Idade}}</h1>
                 <table>
                     <tr>
                         <td>Parametro</td>
-                        <td> {{avaliacoes.data}}</td>
+                        <td v-for="(avaliacoes, index) in avaliacoes" :key="index"> {{avaliacoes.data}}</td>
                     </tr>
                     <tr>
                         <td>Peso</td>
-                        <td> {{avaliacoes.Peso}}</td>
+                        <td v-for="(avaliacoes, index) in avaliacoes" :key="index"> {{avaliacoes.Peso}}</td>
                     </tr>
                     <tr>
                         <td>Altura</td>
-                        <td> {{avaliacoes.Altura}}</td>
+                        <td v-for="(avaliacoes, index) in avaliacoes" :key="index"> {{avaliacoes.Altura}}</td>
                     </tr>
                 </table>
         </div>
@@ -71,7 +71,8 @@ export default {
             Altura: "",
             hoje: new Date(),
             data: new Date().toISOString().substr(0, 10),
-            avaliacoes: []
+            avaliacoes: [],
+            isDisabled: false
         }
     },
     methods:{
@@ -79,16 +80,13 @@ export default {
             console.log(this.hoje.toISOString().substr(0, 10),)
                 // Criando um novo objeto de refeição com as informações preenchidas no formulário
                 const novaAvaliacao = {
-                    Nome: this.Nome,
-                    Idade: this.Idade,
                     Altura: this.Altura,
                     Peso: this.Peso,
                     data: this.data,
                 };
                 // Adicionando a nova refeição na lista de refeições e limpando os campos do formulário
                 this.avaliacoes.push(novaAvaliacao);
-                this.Nome = "";
-                this.Idade = "";
+                this.isDisabled = true
                 this.Altura = '';
                 this.Peso = "";
                 console.log(this.avaliacoes)
