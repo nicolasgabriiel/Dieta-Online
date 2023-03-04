@@ -50,6 +50,10 @@
                         <td>Altura</td>
                         <td v-for="(avaliacoes, index) in avaliacoes" :key="index"> {{avaliacoes.Altura}}</td>
                     </tr>
+                    <tr>
+                        <td>Indice de Massa Corporal</td>
+                        <td v-for="(avaliacoes, index) in avaliacoes" :key="index"> {{avaliacoes.valorIMC}}</td>
+                    </tr>
                 </table>
         </div>
     </div>
@@ -77,12 +81,13 @@ export default {
     },
     methods:{
         gerarAvaliacao(){
-            console.log(this.hoje.toISOString().substr(0, 10),)
+                this.Altura = (this.Altura/100).toFixed(2)
                 // Criando um novo objeto de refeição com as informações preenchidas no formulário
                 const novaAvaliacao = {
                     Altura: this.Altura,
-                    Peso: this.Peso,
+                    Peso: this.Peso,    
                     data: this.data,
+                    valorIMC: ((this.Peso) / (this.Altura * this.Altura)).toFixed(2)
                 };
                 // Adicionando a nova refeição na lista de refeições e limpando os campos do formulário
                 this.avaliacoes.push(novaAvaliacao);
