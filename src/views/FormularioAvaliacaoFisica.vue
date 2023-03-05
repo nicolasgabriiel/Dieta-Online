@@ -54,6 +54,10 @@
                         <td>Indice de Massa Corporal</td>
                         <td v-for="(avaliacoes, index) in avaliacoes" :key="index"> {{avaliacoes.valorIMC}}</td>
                     </tr>
+                    <tr>
+                        <td>IMC</td>
+                        <td v-for="(avaliacoes, index) in avaliacoes" :key="index"> {{avaliacoes.classIMC}}</td>
+                    </tr>
                 </table>
         </div>
     </div>
@@ -76,27 +80,44 @@ export default {
             hoje: new Date(),
             data: new Date().toISOString().substr(0, 10),
             avaliacoes: [],
-            isDisabled: false
+            isDisabled: false,
+            classIMC:'',
+            valorIMC: ''
         }
     },
     methods:{
+
         gerarAvaliacao(){
                 this.Altura = (this.Altura/100).toFixed(2)
-                // Criando um novo objeto de refeição com as informações preenchidas no formulário
+                this.valorIMC = ((this.Peso) / (this.Altura * this.Altura)).toFixed(2)
+
+                if(this.valorIMC < 18.5){
+                    this.classIMC = 'Abaixo do Peso'
+                } 
+                else if (this.valorIMC > 18.4 && this.valorIMC < 25){
+                    this.classIMC = 'Peso Normal'
+                } 
+                else if(this.valorIMC > 24.9 && this.valorIMC < 30){
+                    this.classIMC = 'Sobrepeso'
+                }
+                else{
+                    this.classIMC = 'Obesidade'
+                }
+                    
                 const novaAvaliacao = {
                     Altura: this.Altura,
                     Peso: this.Peso,    
                     data: this.data,
-                    valorIMC: ((this.Peso) / (this.Altura * this.Altura)).toFixed(2)
+                    valorIMC: this.valorIMC,
+                    classIMC: this.classIMC                                    
                 };
-                // Adicionando a nova refeição na lista de refeições e limpando os campos do formulário
                 this.avaliacoes.push(novaAvaliacao);
                 this.isDisabled = true
                 this.Altura = '';
                 this.Peso = "";
-                console.log(this.avaliacoes)
         }
     },
+   
    
 }
 
